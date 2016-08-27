@@ -39,7 +39,7 @@ class Projectile extends FlxSprite
 		this.resetTime = ResetTime;
 		
 		//place holder graphic
-		this.makeGraphic(8, 8, FlxColor.WHITE);
+		this.makeGraphic(8, 8, FlxColor.BLACK);
 	}
 	
 	/**

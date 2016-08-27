@@ -32,16 +32,20 @@ class HUD extends FlxTypedGroup<FlxSprite>
 		_sprBack.loadGraphic(AssetPaths.hudbar__png, false, 960, 60);
 		_sprBack.setPosition(0, FlxG.height - 60);
 		this.add(_sprBack);
+		
 		_txtScore = new FlxText(20, FlxG.height - 42, 0, "SCORE: ", 18, true);
 		this.add(_txtScore);
+		
 		_fire1 = new FlxSprite();
 		_fire1.loadGraphic(AssetPaths.fire1__png, false, 40, 40);
 		_fire1.setPosition((FlxG.width / 2) - 75, FlxG.height - 50);
 		this.add(_fire1);
+		
 		_fire2 = new FlxSprite();
 		_fire2.loadGraphic(AssetPaths.fire2__png, false, 40, 40);
 		_fire2.setPosition((FlxG.width / 2) - (_fire2.width / 2), FlxG.height - 50);
 		this.add(_fire2);
+		
 		_fire3 = new FlxSprite();
 		_fire3.loadGraphic(AssetPaths.fire3__png, false, 40, 40);
 		_fire3.setPosition((FlxG.width / 2) + 35, FlxG.height - 50);
@@ -54,11 +58,20 @@ class HUD extends FlxTypedGroup<FlxSprite>
         });
 	}
 	
+	/**
+	 * Update the HUD with info
+	 * @param	Health
+	 * @param	Score
+	 */
 	public function updateHUD(Health:Int = 0, Score:Int = 0):Void
 	{
 		_txtScore.text = Std.string("SCORE: " + Score);
 	}
 	
+	/**
+	 * Changes the graphic on the action button
+	 * @param	Ready
+	 */
 	public function fire1State(Ready:Bool):Void
 	{
 		if (Ready)
