@@ -19,7 +19,6 @@ class MenuState extends FlxState
 	private var _txtPlay:FlxText;
 	private var _txtCredits:FlxText;
 	private var _menuOption:Int = 0;
-	private var _isKeyDown:Bool = false;
 	
 	/**
 	 * Constructor
