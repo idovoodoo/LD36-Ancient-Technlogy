@@ -62,6 +62,14 @@ class ApplicationMain {
 		types.push (lime.Assets.AssetType.TEXT);
 		
 		
+		urls.push ("assets/sounds/menuchange.wav");
+		types.push (lime.Assets.AssetType.SOUND);
+		
+		
+		urls.push ("assets/sounds/menuselect.wav");
+		types.push (lime.Assets.AssetType.SOUND);
+		
+		
 		urls.push ("assets/sounds/sounds-go-here.txt");
 		types.push (lime.Assets.AssetType.TEXT);
 		
@@ -147,7 +155,7 @@ class ApplicationMain {
 		
 		config = {
 			
-			build: "109",
+			build: "113",
 			company: "idovoodoo",
 			file: "LD36AncientTechnology",
 			fps: 60,

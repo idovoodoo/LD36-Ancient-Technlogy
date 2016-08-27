@@ -40,10 +40,23 @@ class HUD extends FlxTypedGroup<FlxSprite>
 		_fire3 = new FlxSprite().makeGraphic(50, 50, FlxColor.PURPLE);
 		_fire3.setPosition((FlxG.width / 2) + 50, FlxG.height - 55);
 		this.add(_fire3);
+		
+		//stop all objects in this group from moving
+		forEach(function(spr:FlxSprite)
+        {
+             spr.scrollFactor.set(0, 0);
+        });
 	}
 	
 	public function updateHUD(Health:Int = 0, Score:Int = 0):Void
 	{
 		_txtScore.text = Std.string("SCORE: " + Score);
+	}
+	
+	public function fire1Executed():Bool
+	{
+		var isAvailable = false;
+		
+		return isAvailable;
 	}
 }

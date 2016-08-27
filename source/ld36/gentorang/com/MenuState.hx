@@ -80,6 +80,8 @@ class MenuState extends FlxState
 				_menuOption = 0;
 			if (_menuOption < 0)
 				_menuOption = 1;
+				
+			FlxG.sound.play(AssetPaths.menuchange__wav, 1, false);
 		}
 		
 		//change to the selected menu item
@@ -90,6 +92,7 @@ class MenuState extends FlxState
 				case 0: FlxG.switchState(new PlayState());
 				case 1: FlxG.switchState(new CreditState());
 			}
+			FlxG.sound.play(AssetPaths.menuselect__wav, 1, false);
 		}
 		
 	}
