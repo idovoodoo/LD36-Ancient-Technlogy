@@ -32,8 +32,13 @@ class Player extends FlxSprite
 		
 		_grpFire1 = GrpFire1;
 		
+		this.loadGraphic(AssetPaths.airshipanim__png, true, 128, 86);
+		this.animation.add("move", [0, 1], 6, false);
+		
+		
+		
 		//place holder graphic
-		this.makeGraphic(64, 64, FlxColor.BLUE);
+		//this.makeGraphic(64, 64, FlxColor.BLUE);
 		
 	}
 	
@@ -44,6 +49,7 @@ class Player extends FlxSprite
 	override public function update(elapsed:Float):Void
 	{
 		this.drag.x = this.drag.y = 1200;
+		this.animation.play("move");
 		movement();
 		
 		super.update(elapsed);
