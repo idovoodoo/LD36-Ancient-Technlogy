@@ -66,6 +66,10 @@ class ApplicationMain {
 		types.push (lime.Assets.AssetType.BINARY);
 		
 		
+		urls.push ("assets/images/blankbutton.png");
+		types.push (lime.Assets.AssetType.IMAGE);
+		
+		
 		urls.push ("assets/images/cloud0.png");
 		types.push (lime.Assets.AssetType.IMAGE);
 		
@@ -87,6 +91,14 @@ class ApplicationMain {
 		
 		
 		urls.push ("assets/images/fire1on.png");
+		types.push (lime.Assets.AssetType.IMAGE);
+		
+		
+		urls.push ("assets/images/fire2.png");
+		types.push (lime.Assets.AssetType.IMAGE);
+		
+		
+		urls.push ("assets/images/fire3.png");
 		types.push (lime.Assets.AssetType.IMAGE);
 		
 		
@@ -195,7 +207,7 @@ class ApplicationMain {
 		
 		config = {
 			
-			build: "177",
+			build: "196",
 			company: "idovoodoo",
 			file: "LD36AncientTechnology",
 			fps: 60,

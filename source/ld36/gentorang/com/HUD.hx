@@ -32,19 +32,19 @@ class HUD extends FlxTypedGroup<FlxSprite>
 		_sprBack.loadGraphic(AssetPaths.hudbar__png, false, 960, 60);
 		_sprBack.setPosition(0, FlxG.height - 60);
 		this.add(_sprBack);
-		_txtScore = new FlxText(20, FlxG.height - 40, 0, "SCORE: ", 18, true);
+		_txtScore = new FlxText(20, FlxG.height - 42, 0, "SCORE: ", 18, true);
 		this.add(_txtScore);
-		_fire1 = new FlxSprite().makeGraphic(40, 40, FlxColor.LIME);
-		//_fire1 = new FlxSprite();
-		//_fire1.loadGraphic(AssetPaths.fire1__png, true, 40, 40);
-		//_fire1.
-		_fire1.setPosition((FlxG.width / 2) - 100, FlxG.height - 55);
+		_fire1 = new FlxSprite();
+		_fire1.loadGraphic(AssetPaths.fire1__png, false, 40, 40);
+		_fire1.setPosition((FlxG.width / 2) - 75, FlxG.height - 50);
 		this.add(_fire1);
-		_fire2 = new FlxSprite().makeGraphic(40, 40, FlxColor.MAGENTA);
-		_fire2.setPosition((FlxG.width / 2) - (_fire2.width / 2), FlxG.height - 55);
+		_fire2 = new FlxSprite();
+		_fire2.loadGraphic(AssetPaths.fire2__png, false, 40, 40);
+		_fire2.setPosition((FlxG.width / 2) - (_fire2.width / 2), FlxG.height - 50);
 		this.add(_fire2);
-		_fire3 = new FlxSprite().makeGraphic(40, 40, FlxColor.PURPLE);
-		_fire3.setPosition((FlxG.width / 2) + 50, FlxG.height - 55);
+		_fire3 = new FlxSprite();
+		_fire3.loadGraphic(AssetPaths.fire3__png, false, 40, 40);
+		_fire3.setPosition((FlxG.width / 2) + 35, FlxG.height - 50);
 		this.add(_fire3);
 		
 		//stop all objects in this group from moving
@@ -62,8 +62,12 @@ class HUD extends FlxTypedGroup<FlxSprite>
 	public function fire1State(Ready:Bool):Void
 	{
 		if (Ready)
-			_fire1.color = FlxColor.LIME;
+		{
+			_fire1.color = FlxColor.WHITE;
+		}
 		else
-			_fire1.color = FlxColor.GREEN;
+		{
+			_fire1.color = FlxColor.GRAY;
+		}
 	}
 }
