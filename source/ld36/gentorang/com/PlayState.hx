@@ -9,8 +9,18 @@ import flixel.math.FlxMath;
 
 class PlayState extends FlxState
 {
+	
+	//public vars
+	
+	//private vars
+	private var _player:Player;
+	
 	override public function create():Void
 	{
+		_player = new Player(50, 50);
+		
+		this.add(_player);
+		
 		super.create();
 	}
 

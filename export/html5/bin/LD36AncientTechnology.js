@@ -63,7 +63,7 @@ ApplicationMain.init = function() {
 	}
 };
 ApplicationMain.main = function() {
-	ApplicationMain.config = { build : "34", company : "idovoodoo", file : "LD36AncientTechnology", fps : 60, name : "LD36 Ancient Technology", orientation : "", packageName : "com.example.myapp", version : "0.0.1", windows : [{ antialiasing : 0, background : 0, borderless : false, depthBuffer : false, display : 0, fullscreen : false, hardware : false, height : 480, parameters : "{}", resizable : false, stencilBuffer : true, title : "LD36 Ancient Technology", vsync : true, width : 640, x : null, y : null}]};
+	ApplicationMain.config = { build : "37", company : "idovoodoo", file : "LD36AncientTechnology", fps : 60, name : "LD36 Ancient Technology", orientation : "", packageName : "com.example.myapp", version : "0.0.1", windows : [{ antialiasing : 0, background : 0, borderless : false, depthBuffer : false, display : 0, fullscreen : false, hardware : false, height : 480, parameters : "{}", resizable : false, stencilBuffer : true, title : "LD36 Ancient Technology", vsync : true, width : 640, x : null, y : null}]};
 };
 ApplicationMain.start = function() {
 	var hasMain = false;
@@ -46147,13 +46147,99 @@ $hxClasses["ld36.gentorang.com.PlayState"] = ld36_gentorang_com_PlayState;
 ld36_gentorang_com_PlayState.__name__ = ["ld36","gentorang","com","PlayState"];
 ld36_gentorang_com_PlayState.__super__ = flixel_FlxState;
 ld36_gentorang_com_PlayState.prototype = $extend(flixel_FlxState.prototype,{
-	create: function() {
+	_player: null
+	,create: function() {
+		this._player = new ld36_gentorang_com_Player(50,50);
 		flixel_FlxState.prototype.create.call(this);
 	}
 	,update: function(elapsed) {
 		flixel_FlxState.prototype.update.call(this,elapsed);
 	}
 	,__class__: ld36_gentorang_com_PlayState
+});
+var ld36_gentorang_com_Player = function(X,Y) {
+	if(Y == null) {
+		Y = 0;
+	}
+	if(X == null) {
+		X = 0;
+	}
+	this.speed = 100;
+	flixel_FlxSprite.call(this,X,Y);
+	this.makeGraphic(64,64,-16776961);
+};
+$hxClasses["ld36.gentorang.com.Player"] = ld36_gentorang_com_Player;
+ld36_gentorang_com_Player.__name__ = ["ld36","gentorang","com","Player"];
+ld36_gentorang_com_Player.__super__ = flixel_FlxSprite;
+ld36_gentorang_com_Player.prototype = $extend(flixel_FlxSprite.prototype,{
+	speed: null
+	,update: function(elapsed) {
+		this.movement();
+		flixel_FlxSprite.prototype.update.call(this,elapsed);
+	}
+	,movement: function() {
+		var _up = false;
+		var _down = false;
+		var _left = false;
+		var _right = false;
+		_up = flixel_FlxG.keys.checkKeyArrayState([38,87],1);
+		_down = flixel_FlxG.keys.checkKeyArrayState([40,83],1);
+		_left = flixel_FlxG.keys.checkKeyArrayState([37,65],1);
+		_right = flixel_FlxG.keys.checkKeyArrayState([39,68],1);
+		if(_up && _down) {
+			_down = false;
+			_up = false;
+		}
+		if(_left && _right) {
+			_right = false;
+			_left = false;
+		}
+		if(_up || _down || _left || _right) {
+			var pAngle = 0;
+			if(_up) {
+				pAngle = -90;
+				if(_left) {
+					pAngle -= 45;
+				} else if(_right) {
+					pAngle += 45;
+				}
+				this.set_facing(256);
+			} else if(_down) {
+				pAngle = 90;
+				if(_left) {
+					pAngle += 45;
+				} else if(_right) {
+					pAngle -= 45;
+				}
+				this.set_facing(4096);
+			} else if(_left) {
+				pAngle = 180;
+				this.set_facing(1);
+			} else if(_right) {
+				pAngle = 0;
+				this.set_facing(16);
+			}
+			this.velocity.set(this.speed,0);
+			var point = flixel_math_FlxPoint._pool.get().set(0,0);
+			point._inPool = false;
+			point._weak = true;
+			this.velocity.rotate(point,pAngle);
+			if((this.velocity.x != 0 || this.velocity.y != 0) && this.touching == 0) {
+				switch(this.facing) {
+				case 1:case 16:
+					this.animation.play("lr");
+					break;
+				case 256:
+					this.animation.play("u");
+					break;
+				case 4096:
+					this.animation.play("d");
+					break;
+				}
+			}
+		}
+	}
+	,__class__: ld36_gentorang_com_Player
 });
 var lime_AssetCache = function() {
 	this.enabled = true;
