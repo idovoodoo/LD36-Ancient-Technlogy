@@ -179,7 +179,7 @@ class ApplicationMain {
 		
 		config = {
 			
-			build: "153",
+			build: "166",
 			company: "idovoodoo",
 			file: "LD36AncientTechnology",
 			fps: 60,
@@ -197,13 +197,13 @@ class ApplicationMain {
 					display: 0,
 					fullscreen: false,
 					hardware: true,
-					height: 480,
+					height: 640,
 					parameters: "{}",
 					resizable: true,
 					stencilBuffer: true,
 					title: "LD36 Ancient Technology",
 					vsync: true,
-					width: 640,
+					width: 960,
 					x: null,
 					y: null
 				},
@@ -221,7 +221,7 @@ class ApplicationMain {
 		
 		#if (js && html5)
 		#if (munit || utest)
-		openfl.Lib.embed (null, 640, 480, "000000");
+		openfl.Lib.embed (null, 960, 640, "000000");
 		#end
 		#else
 		create ();
