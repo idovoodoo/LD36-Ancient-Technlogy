@@ -110,19 +110,19 @@ class PlayState extends FlxState
 		{
 			case 0:
 				var cloud0:FlxSprite = new FlxSprite();
-				cloud0.loadGraphic(AssetPaths.cloud0__png, true, 227, 99);
+				cloud0.loadGraphic(AssetPaths.cloud0__png, false, 227, 99);
 				cloud0.setPosition(FlxG.width, FlxG.random.int(0, FlxG.height - Std.int(cloud0.height) - 60));
 				cloud0.velocity.x = FlxG.random.int(-75, -125);
 				_grpCloud.add(cloud0);
 			case 1:
 				var cloud1:FlxSprite = new FlxSprite();
-				cloud1.loadGraphic(AssetPaths.cloud1__png, true, 232, 66);
+				cloud1.loadGraphic(AssetPaths.cloud1__png, false, 232, 66);
 				cloud1.setPosition(FlxG.width, FlxG.random.int(0, FlxG.height - Std.int(cloud1.height) - 60));
 				cloud1.velocity.x = FlxG.random.int(-75, -125);
 				_grpCloud.add(cloud1);
 			case 2:
 				var cloud2:FlxSprite = new FlxSprite();
-				cloud2.loadGraphic(AssetPaths.cloud2__png, true, 219, 107);
+				cloud2.loadGraphic(AssetPaths.cloud2__png, false, 219, 107);
 				cloud2.setPosition(FlxG.width, FlxG.random.int(0, FlxG.height - Std.int(cloud2.height) - 60));
 				cloud2.velocity.x = FlxG.random.int(-75, -125);
 				_grpCloud.add(cloud2);
