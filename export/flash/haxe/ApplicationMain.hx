@@ -54,6 +54,14 @@ class ApplicationMain {
 		types.push (lime.Assets.AssetType.IMAGE);
 		
 		
+		urls.push ("assets/images/airship_v2.png");
+		types.push (lime.Assets.AssetType.IMAGE);
+		
+		
+		urls.push ("assets/images/airship_v2.xcf");
+		types.push (lime.Assets.AssetType.BINARY);
+		
+		
 		urls.push ("assets/images/images-go-here.txt");
 		types.push (lime.Assets.AssetType.TEXT);
 		
@@ -155,7 +163,7 @@ class ApplicationMain {
 		
 		config = {
 			
-			build: "132",
+			build: "133",
 			company: "idovoodoo",
 			file: "LD36AncientTechnology",
 			fps: 60,

@@ -35,7 +35,7 @@ class Player extends FlxSprite
 		super(X, Y);
 		
 		_grpFire1 = GrpFire1;
-		this.loadGraphic(AssetPaths.airshipanim__png, true, 128, 86);
+		this.loadGraphic(AssetPaths.airship_v2__png, true, 156, 108);
 		this.animation.add("move", [0, 1], 6, false);
 		_tmrFire1 = new FlxTimer();
 		
