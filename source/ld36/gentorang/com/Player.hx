@@ -23,6 +23,10 @@ class Player extends FlxSprite
 	private var _grpFire1:FlxTypedGroup<Projectile>;
 	private var _tmrFire1:FlxTimer;
 	private var _fire1Ready:Bool;
+	private var _tmrFire2:FlxTimer;
+	private var _fire2Ready:Bool;
+	private var _tmrFire3:FlxTimer;
+	private var _fire3Ready:Bool;
 	private var _hud:HUD;
 	
 	/**
@@ -38,7 +42,8 @@ class Player extends FlxSprite
 		this.loadGraphic(AssetPaths.airship_v2__png, true, 156, 108);
 		this.animation.add("move", [0, 1], 6, false);
 		_tmrFire1 = new FlxTimer();
-		
+		_tmrFire2 = new FlxTimer();
+		_tmrFire3 = new FlxTimer();
 		_hud = Hud;
 		//place holder graphic
 		//this.makeGraphic(64, 64, FlxColor.BLUE);
@@ -141,10 +146,34 @@ class Player extends FlxSprite
 		{
 			if (!_tmrFire1.active)
 			{
-				_grpFire1.add(new Projectile(this.x + (this.width / 2), this.y + (this.height / 2), 600, FlxObject.RIGHT, 10, 0.5));
+				_grpFire1.add(new Projectile(this.x + (this.width / 2), this.y + (this.height / 2), 600, FlxObject.RIGHT, 10, 0.25, 1));
 				_hud.fire1State(false);
 				//sets the timer between Fire 1
 				_tmrFire1.start(0.25, fire1, 0);
+			}
+		}
+		
+		//fire 2
+		if (_fire2 && FlxG.keys.justPressed.O)
+		{
+			if (!_tmrFire2.active)
+			{
+				_grpFire1.add(new Projectile(this.x + (this.width / 2), this.y + (this.height / 2), 800, FlxObject.RIGHT, 20, 3, 2));
+				_hud.fire2State(false);
+				//sets the timer between Fire 2
+				_tmrFire2.start(3, fire2, 0);
+			}
+		}
+		
+		//fire 3
+		if (_fire3 && FlxG.keys.justPressed.P)
+		{
+			if (!_tmrFire3.active)
+			{
+				_grpFire1.add(new Projectile(this.x + (this.width / 2), this.y + (this.height / 2), 1000, FlxObject.RIGHT, 50, 5, 3));
+				_hud.fire3State(false);
+				//sets the timer between Fire 2
+				_tmrFire3.start(5, fire3, 0);
 			}
 		}
 	}
@@ -157,6 +186,26 @@ class Player extends FlxSprite
 	{
 		_tmrFire1.cancel();
 		_hud.fire1State(true);
+	}
+	
+	/**
+	 * Callback function to reset timer for fire2
+	 * @param	Timer
+	 */
+	private function fire2(Timer:FlxTimer):Void
+	{
+		_tmrFire2.cancel();
+		_hud.fire2State(true);
+	}
+	
+	/**
+	 * Callback function to reset timer for fire3
+	 * @param	Timer
+	 */
+	private function fire3(Timer:FlxTimer):Void
+	{
+		_tmrFire3.cancel();
+		_hud.fire3State(true);
 	}
 	
 }

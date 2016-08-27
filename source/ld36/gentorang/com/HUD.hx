@@ -83,4 +83,36 @@ class HUD extends FlxTypedGroup<FlxSprite>
 			_fire1.color = FlxColor.GRAY;
 		}
 	}
+	
+	/**
+	 * Changes the graphic on the action button
+	 * @param	Ready
+	 */
+	public function fire2State(Ready:Bool):Void
+	{
+		if (Ready)
+		{
+			_fire2.color = FlxColor.WHITE;
+		}
+		else
+		{
+			_fire2.color = FlxColor.GRAY;
+		}
+	}
+	
+	/**
+	 * Changes the graphic on the action button
+	 * @param	Ready
+	 */
+	public function fire3State(Ready:Bool):Void
+	{
+		if (Ready)
+		{
+			_fire3.color = FlxColor.WHITE;
+		}
+		else
+		{
+			_fire3.color = FlxColor.GRAY;
+		}
+	}
 }

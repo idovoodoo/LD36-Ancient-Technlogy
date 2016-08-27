@@ -20,6 +20,7 @@ class Projectile extends FlxSprite
     private var direction:Int;
     private var damage:Float;
 	private var resetTime:Float;
+	private var fireType:Int;
 
 	/**
 	 * Constructor!!
@@ -29,17 +30,31 @@ class Projectile extends FlxSprite
 	 * @param	Direction
 	 * @param	Damage
 	 */
-	public function new(X:Float, Y:Float, Speed:Float, Direction:Int, Damage:Float, ResetTime:Float) 
+	public function new(X:Float, Y:Float, Speed:Float, Direction:Int, Damage:Float, ResetTime:Float, FireType:Int) 
 	{
 		super(X, Y);
 		
 		this.speed 		= Speed;
         this.direction	= Direction;
         this.damage 	= Damage;
-		this.resetTime = ResetTime;
+		this.resetTime  = ResetTime;
+		this.fireType	= FireType;
 		
-		//place holder graphic
-		this.makeGraphic(8, 8, FlxColor.BLACK);
+		switch (fireType) 
+		{
+			case 1:
+				//place holder graphic
+				this.makeGraphic(8, 8, FlxColor.BLACK);
+			case 2:
+				//place holder graphic
+				this.makeGraphic(8, 8, FlxColor.PURPLE);
+			case 3:
+				//place holder graphic
+				this.makeGraphic(8, 8, FlxColor.RED);
+				
+				
+		}
+		
 	}
 	
 	/**
