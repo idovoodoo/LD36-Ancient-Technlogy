@@ -35,11 +35,8 @@ class Player extends FlxSprite
 		this.loadGraphic(AssetPaths.airshipanim__png, true, 128, 86);
 		this.animation.add("move", [0, 1], 6, false);
 		
-		
-		
 		//place holder graphic
 		//this.makeGraphic(64, 64, FlxColor.BLUE);
-		
 	}
 	
 	/**

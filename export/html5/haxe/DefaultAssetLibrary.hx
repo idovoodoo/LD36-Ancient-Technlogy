@@ -57,6 +57,11 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		
 		
+		
+		
+		
+		
+		
 		openfl.text.Font.registerFont (__ASSET__OPENFL__flixel_fonts_nokiafc22_ttf);
 		openfl.text.Font.registerFont (__ASSET__OPENFL__flixel_fonts_monsterrat_ttf);
 		
@@ -67,6 +72,16 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		className.set ("assets/data/data-goes-here.txt", __ASSET__assets_data_data_goes_here_txt);
 		type.set ("assets/data/data-goes-here.txt", AssetType.TEXT);
+		className.set ("assets/images/airship.png", __ASSET__assets_images_airship_png);
+		type.set ("assets/images/airship.png", AssetType.IMAGE);
+		className.set ("assets/images/airship.xcf", __ASSET__assets_images_airship_xcf);
+		type.set ("assets/images/airship.xcf", AssetType.BINARY);
+		className.set ("assets/images/airship0.png", __ASSET__assets_images_airship0_png);
+		type.set ("assets/images/airship0.png", AssetType.IMAGE);
+		className.set ("assets/images/airship1.png", __ASSET__assets_images_airship1_png);
+		type.set ("assets/images/airship1.png", AssetType.IMAGE);
+		className.set ("assets/images/airshipanim.png", __ASSET__assets_images_airshipanim_png);
+		type.set ("assets/images/airshipanim.png", AssetType.IMAGE);
 		className.set ("assets/images/images-go-here.txt", __ASSET__assets_images_images_go_here_txt);
 		type.set ("assets/images/images-go-here.txt", AssetType.TEXT);
 		className.set ("assets/music/music-goes-here.txt", __ASSET__assets_music_music_goes_here_txt);
@@ -92,6 +107,26 @@ class DefaultAssetLibrary extends AssetLibrary {
 		path.set (id, id);
 		
 		type.set (id, AssetType.TEXT);
+		id = "assets/images/airship.png";
+		path.set (id, id);
+		
+		type.set (id, AssetType.IMAGE);
+		id = "assets/images/airship.xcf";
+		path.set (id, id);
+		
+		type.set (id, AssetType.BINARY);
+		id = "assets/images/airship0.png";
+		path.set (id, id);
+		
+		type.set (id, AssetType.IMAGE);
+		id = "assets/images/airship1.png";
+		path.set (id, id);
+		
+		type.set (id, AssetType.IMAGE);
+		id = "assets/images/airshipanim.png";
+		path.set (id, id);
+		
+		type.set (id, AssetType.IMAGE);
 		id = "assets/images/images-go-here.txt";
 		path.set (id, id);
 		
@@ -144,6 +179,21 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		className.set ("assets/data/data-goes-here.txt", __ASSET__assets_data_data_goes_here_txt);
 		type.set ("assets/data/data-goes-here.txt", AssetType.TEXT);
+		
+		className.set ("assets/images/airship.png", __ASSET__assets_images_airship_png);
+		type.set ("assets/images/airship.png", AssetType.IMAGE);
+		
+		className.set ("assets/images/airship.xcf", __ASSET__assets_images_airship_xcf);
+		type.set ("assets/images/airship.xcf", AssetType.BINARY);
+		
+		className.set ("assets/images/airship0.png", __ASSET__assets_images_airship0_png);
+		type.set ("assets/images/airship0.png", AssetType.IMAGE);
+		
+		className.set ("assets/images/airship1.png", __ASSET__assets_images_airship1_png);
+		type.set ("assets/images/airship1.png", AssetType.IMAGE);
+		
+		className.set ("assets/images/airshipanim.png", __ASSET__assets_images_airshipanim_png);
+		type.set ("assets/images/airshipanim.png", AssetType.IMAGE);
 		
 		className.set ("assets/images/images-go-here.txt", __ASSET__assets_images_images_go_here_txt);
 		type.set ("assets/images/images-go-here.txt", AssetType.TEXT);
@@ -814,6 +864,11 @@ class DefaultAssetLibrary extends AssetLibrary {
 #if flash
 
 @:keep @:bind #if display private #end class __ASSET__assets_data_data_goes_here_txt extends null { }
+@:keep @:bind #if display private #end class __ASSET__assets_images_airship_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
+@:keep @:bind #if display private #end class __ASSET__assets_images_airship_xcf extends null { }
+@:keep @:bind #if display private #end class __ASSET__assets_images_airship0_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
+@:keep @:bind #if display private #end class __ASSET__assets_images_airship1_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
+@:keep @:bind #if display private #end class __ASSET__assets_images_airshipanim_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
 @:keep @:bind #if display private #end class __ASSET__assets_images_images_go_here_txt extends null { }
 @:keep @:bind #if display private #end class __ASSET__assets_music_music_goes_here_txt extends null { }
 @:keep @:bind #if display private #end class __ASSET__assets_sounds_sounds_go_here_txt extends null { }
@@ -825,6 +880,11 @@ class DefaultAssetLibrary extends AssetLibrary {
 
 
 #elseif html5
+
+
+
+
+
 
 
 
@@ -845,6 +905,11 @@ class DefaultAssetLibrary extends AssetLibrary {
 
 
 @:file("assets/data/data-goes-here.txt") #if display private #end class __ASSET__assets_data_data_goes_here_txt extends lime.utils.Bytes {}
+@:image("assets/images/airship.png") #if display private #end class __ASSET__assets_images_airship_png extends lime.graphics.Image {}
+@:file("assets/images/airship.xcf") #if display private #end class __ASSET__assets_images_airship_xcf extends lime.utils.Bytes {}
+@:image("assets/images/airship0.png") #if display private #end class __ASSET__assets_images_airship0_png extends lime.graphics.Image {}
+@:image("assets/images/airship1.png") #if display private #end class __ASSET__assets_images_airship1_png extends lime.graphics.Image {}
+@:image("assets/images/airshipanim.png") #if display private #end class __ASSET__assets_images_airshipanim_png extends lime.graphics.Image {}
 @:file("assets/images/images-go-here.txt") #if display private #end class __ASSET__assets_images_images_go_here_txt extends lime.utils.Bytes {}
 @:file("assets/music/music-goes-here.txt") #if display private #end class __ASSET__assets_music_music_goes_here_txt extends lime.utils.Bytes {}
 @:file("assets/sounds/sounds-go-here.txt") #if display private #end class __ASSET__assets_sounds_sounds_go_here_txt extends lime.utils.Bytes {}
