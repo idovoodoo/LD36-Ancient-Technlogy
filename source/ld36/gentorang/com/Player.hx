@@ -4,6 +4,7 @@ import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.FlxObject;
 import flixel.util.FlxColor;
+import flixel.util.FlxTimer;
 import flixel.math.FlxPoint;
 import flixel.system.FlxAssets.FlxGraphicAsset;
 import flixel.group.FlxGroup;
@@ -20,21 +21,25 @@ class Player extends FlxSprite
 	//private vars
 	private var _isFireKeyDown:Bool = false;
 	private var _grpFire1:FlxTypedGroup<Projectile>;
-
+	private var _tmrFire1:FlxTimer;
+	private var _fire1Ready:Bool;
+	private var _hud:HUD;
+	
 	/**
 	 * Constructor!!
 	 * @param	X start pos
 	 * @param	Y start pos
 	 */
-	public function new(X:Float = 0, Y:Float = 0, GrpFire1:FlxTypedGroup<Projectile>) 
+	public function new(X:Float = 0, Y:Float = 0, GrpFire1:FlxTypedGroup<Projectile>, Hud:HUD) 
 	{
 		super(X, Y);
 		
 		_grpFire1 = GrpFire1;
-		
 		this.loadGraphic(AssetPaths.airshipanim__png, true, 128, 86);
 		this.animation.add("move", [0, 1], 6, false);
+		_tmrFire1 = new FlxTimer();
 		
+		_hud = Hud;
 		//place holder graphic
 		//this.makeGraphic(64, 64, FlxColor.BLUE);
 	}
@@ -128,14 +133,30 @@ class Player extends FlxSprite
 			this.x = FlxG.width - this.width;
 		if (this.y < 0)
 			this.y = 0;
-		if (this.y > FlxG.height - this.height - 50)
-			this.y = FlxG.height - this.height - 50;
+		if (this.y > FlxG.height - this.height - 86)
+			this.y = FlxG.height - this.height - 86;
 				
 		//fire 1 
 		if (_fire1 && FlxG.keys.justPressed.I)
 		{
-			_grpFire1.add(new Projectile(this.x + (this.width / 2), this.y + (this.height / 2), 600, FlxObject.RIGHT, 10));
+			if (!_tmrFire1.active)
+			{
+				_grpFire1.add(new Projectile(this.x + (this.width / 2), this.y + (this.height / 2), 600, FlxObject.RIGHT, 10, 0.5));
+				_hud.fire1State(false);
+				//sets the timer between Fire 1
+				_tmrFire1.start(0.25, fire1, 0);
+			}
 		}
+	}
+	
+	/**
+	 * Callback function to reset timer for fire1
+	 * @param	Timer
+	 */
+	private function fire1(Timer:FlxTimer):Void
+	{
+		_tmrFire1.cancel();
+		_hud.fire1State(true);
 	}
 	
 }

@@ -155,7 +155,7 @@ class ApplicationMain {
 		
 		config = {
 			
-			build: "113",
+			build: "132",
 			company: "idovoodoo",
 			file: "LD36AncientTechnology",
 			fps: 60,

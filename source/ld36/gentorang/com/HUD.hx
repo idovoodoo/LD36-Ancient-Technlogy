@@ -53,10 +53,11 @@ class HUD extends FlxTypedGroup<FlxSprite>
 		_txtScore.text = Std.string("SCORE: " + Score);
 	}
 	
-	public function fire1Executed():Bool
+	public function fire1State(Ready:Bool):Void
 	{
-		var isAvailable = false;
-		
-		return isAvailable;
+		if (Ready)
+			_fire1.color = FlxColor.LIME;
+		else
+			_fire1.color = FlxColor.GREEN;
 	}
 }

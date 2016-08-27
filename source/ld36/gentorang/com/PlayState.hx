@@ -31,7 +31,7 @@ class PlayState extends FlxState
 		this.add(_HUD);
 		_grpPlayerFire1 =  new FlxTypedGroup<Projectile>();
 		this.add(_grpPlayerFire1);
-		_player = new Player(50, 50, _grpPlayerFire1);
+		_player = new Player(50, 50, _grpPlayerFire1, _HUD);
 		this.add(_player);
 		
 		super.create();
