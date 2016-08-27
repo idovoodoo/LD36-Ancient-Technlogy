@@ -15,7 +15,7 @@ import flixel.group.FlxGroup;
 class Player extends FlxSprite
 {
 	//public vars
-	public var speed:Float = 150;
+	public var speed:Float = 200;
 	
 	//private vars
 	private var _isFireKeyDown:Bool = false;
@@ -118,12 +118,23 @@ class Player extends FlxSprite
 			this.velocity.set(speed, 0);
 			this.velocity.rotate(FlxPoint.weak(0, 0), pAngle);
 			
+			
 		}
 		
+		//keep player on the screen
+		if (this.x < 0)
+			this.x = 0;
+		if (this.x > FlxG.width - this.width)
+			this.x = FlxG.width - this.width;
+		if (this.y < 0)
+			this.y = 0;
+		if (this.y > FlxG.height - this.height - 50)
+			this.y = FlxG.height - this.height - 50;
+				
 		//fire 1 
 		if (_fire1 && FlxG.keys.justPressed.I)
 		{
-			_grpFire1.add(new Projectile(this.x, this.y + (this.height / 2), 600, FlxObject.RIGHT, 10));
+			_grpFire1.add(new Projectile(this.x + (this.width / 2), this.y + (this.height / 2), 600, FlxObject.RIGHT, 10));
 		}
 	}
 	
