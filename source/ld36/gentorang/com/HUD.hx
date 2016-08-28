@@ -8,6 +8,8 @@ import flixel.group.FlxGroup;
 import flixel.text.FlxText;
 import flixel.util.FlxColor;
 using flixel.util.FlxSpriteUtil;
+using flixel.tweens.FlxTween;
+using flixel.tweens.FlxEase;
  
 /**
  * ...
@@ -77,6 +79,7 @@ class HUD extends FlxTypedGroup<FlxSprite>
 		if (Ready)
 		{
 			_fire1.color = FlxColor.WHITE;
+			
 		}
 		else
 		{

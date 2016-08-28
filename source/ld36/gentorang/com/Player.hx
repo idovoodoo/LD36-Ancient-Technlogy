@@ -10,7 +10,7 @@ import flixel.system.FlxAssets.FlxGraphicAsset;
 import flixel.group.FlxGroup;
 
 /**
- * ...
+ * The player!
  * @author idovoodoo
  */
 class Player extends FlxSprite

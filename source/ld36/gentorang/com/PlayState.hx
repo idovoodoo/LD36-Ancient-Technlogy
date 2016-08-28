@@ -25,6 +25,8 @@ class PlayState extends FlxState
 	private var _tmrCloud:FlxTimer;
 	private var _cloudReady:Bool;
 	
+	private var _enemyTest:Enemy0;
+	
 	/**
 	 * Constructor!
 	 */
@@ -41,11 +43,14 @@ class PlayState extends FlxState
 		_grpCloud = new FlxTypedGroup<FlxSprite>();
 		this.add(_grpCloud);
 		
+		_enemyTest = new Enemy0(FlxG.width - 100, FlxG.height / 2);
+		this.add(_enemyTest);
+		
 		_tmrCloud = new FlxTimer();
 		
 		super.create();
 	}
-
+	
 	/**
 	 * Update
 	 * @param	elapsed
